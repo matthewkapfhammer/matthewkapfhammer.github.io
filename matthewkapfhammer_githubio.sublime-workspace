@@ -1,0 +1,282 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Exe",
+				"executable"
+			],
+			[
+				"env",
+				"environ"
+			],
+			[
+				"max",
+				"maxdepth"
+			],
+			[
+				"in",
+				"includeNamespace"
+			],
+			[
+				"se",
+				"selection"
+			],
+			[
+				"get",
+				"getMainWindow"
+			],
+			[
+				"tel",
+				"telnet"
+			],
+			[
+				"c",
+				"connection"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"markdo",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"",
+				"ChannelRepositoryTools: Test Default Channel"
+			],
+			[
+				"Test",
+				"ChannelRepositoryTools: Test Default Channel"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"Prev",
+				"Markdown Preview: Preview in Browser"
+			]
+		],
+		"width": 471.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Git/matthewkapfhammer.github.io/publishconf.py",
+		"/D/Git/matthewkapfhammer.github.io/pelicanconf.py",
+		"/D/Git/matthewkapfhammer.github.io/content/blog/wsl_githubpags_pelican.md",
+		"/D/Git/matthewkapfhammer.github.io/content/pages/about.md",
+		"/D/Git/matthewkapfhammer.github.io/content/wsl_githubpags_pelican.md",
+		"/D/Git/matthewkapfhammer.github.io/pages/about.md",
+		"/D/Git/NeoFur_Unity/MaterialPacks/1_getting_going.md",
+		"/D/Git/matthewkapfhammer.github.io/1_getting_going.md",
+		"/D/Git/matthewkapfhammer.github.io/content/example.md",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/D/Git/MotionBuilderSublime/Default (Windows).sublime-keymap",
+		"/D/Git/MotionBuilderSublime/Default (Linux).sublime-keymap",
+		"/D/Git/MotionBuilderSublime/README.md",
+		"/D/Git/MotionBuilderSublime/MotionBuilderSublime.py",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/MotionBuilderSublime/README.md",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/MotionBuilderSublime/MotionBuilderSublime.sublime-settings",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/MotionBuilderSublime/Default (Windows).sublime-keymap",
+		"/D/Git/MotionBuilderSublime/tests/manual_testing.py",
+		"/D/Git/neopipe/scripts/launch_maya2016e1.py",
+		"/D/Git/neopipe/scripts/launch_maya2016e2.py",
+		"/D/Git/neopipe/scripts/install_neopipe_on_workstation.py",
+		"/D/Git/neopipe/deployment/nei_launcher.py",
+		"/D/Git/neopipe/deployment/config_creator.py",
+		"/D/Git/maya_pyqt_to_pyside/PRJ_PySide_Maya_01/outliner1.py",
+		"/D/Git/maya_pyqt_to_pyside/PRJ_PySide_MoBu_01/mobu_app_template.py",
+		"/D/Git/multiappgui/ExampleApplication/python/exampleapplication/app.py",
+		"/D/Git/package_control_channel/repository/m.json",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/MotionBuilderSublime/MotionBuilderSublime.py",
+		"/D/Git/mobo_rnd/pyside_examples.py",
+		"/D/Git/mobo_rnd/example_widget.py",
+		"/D/Git/mobo_rnd/custom_menu.py",
+		"/D/UnrealProjects/UnrealPython/Content/Scripts/funnygameclasses_new.py",
+		"/D/UnrealProjects/UnrealPython/Content/Scripts/mk_module.py",
+		"/C/Program Files/Autodesk/MotionBuilder 2016/bin/config/Keyboard/MotionBuilder.txt",
+		"/D/Git/cross3d/README.md",
+		"/C/Program Files/Autodesk/MotionBuilder 2016/bin/config/PythonStartup/PyTestStarter.py",
+		"/C/Program Files/Autodesk/MotionBuilder 2016/bin/config/Python/mbpylintrc.txt",
+		"/D/Svn/neoglyphic.NeoFurMaterialPacks/README.md",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/User/MarkdownPreview.sublime-settings",
+		"/C/Users/matthew/AppData/Roaming/Sublime Text 2/Packages/MarkdownEditing/README.md",
+		"/C/Users/matthew/Desktop/installs/python/install_python-2.7.3.bat",
+		"/C/Llm/installs/python/install_python-2.7.3.bat"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"context",
+			"ctrl+alt+shift+enter",
+			"ctrl+enter",
+			"ctrl+enter\n",
+			"ctrl+enter\n\n",
+			"ctrl+enter",
+			"enter",
+			"setMa",
+			"showOutliner",
+			"scanDag",
+			")\n",
+			"cmds",
+			"DagTreeItem",
+			"DagTreeProxyModel",
+			"unwrapinstance",
+			"selectionModel",
+			"wrapinstance",
+			"MotionBuilderSublime",
+			"Maya",
+			"MotionBuilderSublime",
+			"send_to_motionbuilder",
+			"_py_str",
+			"_send_to_motionbuilder"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.7675,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.channel_repository_tools":
+	{
+		"height": 211.0
+	},
+	"output.markdown":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 285.0,
+	"status_bar_visible": true
+}
