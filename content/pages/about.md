@@ -1,12 +1,12 @@
-Title: About...
+Title: About
 Date: 2017-01-14
 Slug: about
 Authors: Matthew Kapfhammer
 
-# About the Author
+# About Me
 
-Matthew Kapfhammer is a technical artist and developer primarily working in the film and games industries.
+Hiya! I'm Matthew Kapfhammer, a technical artist and developer primarily working in the film and games industries in California.
 
 # About the Site
 
-You're mostly looking at a blog for the time being. It's a place to drop  tech, art, nutrician, and fitness related info. Enjoy!
+You're mostly looking at a blog for the time being. It's an open place for me to write about tech, art, nutrician, and fitness sh'tuff. Enjoy!

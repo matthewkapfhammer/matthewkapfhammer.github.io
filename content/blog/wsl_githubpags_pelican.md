@@ -30,7 +30,7 @@ But it's 2017 now. Let's see what amd how quickly the combination of the WSL, Gi
 1. Update with basic user content.
     1. ~15+ mins (longer if you want to further customize)
 1. Push changes to GitHub to deploy the new website.
-    1. ~ mins
+    1. ~2 mins
 
 ## Installing WSL
 
@@ -46,23 +46,23 @@ Also very simple. Naming convention for the new repo is: ```$GITHUB_USERNAME.git
 Launch a Bash terminal typing the following in the Windows start up area and clicking on the resulting orange and white icon: ```Bash on Ubuntu on Windows```. Note that to paste into the Bash shell, you'll need to use the right mouse button istead of ctrl+v or the middle mouse button.
 
 In Bash, I like to use ```tree``` and ```git``` is essential:
-```
+```bash
 sudo apt-get install tree
 sudo apt-get install git
 ```
 
 WSL ships with Pyhon 2.7.6. You'll need to install pip: https://docs.python.org/2/installing/#install-pip-in-versions-of-python-prior-to-python-2-7-9. 
-```
+```bash
 sudo apt-get install python-pip
 ```
 
 I took the additional step of installing virtualenv and using a virtual environment:
-```
+```bash
 sudo pip install virtualenv
 ```
 
 Create a new virtualenv to work in and enter it:
-```
+```bash
 cd $YOUR_GOT_REPO_ROOT_DIR
 virtualenv ./venv
 source venv/bin/activate
@@ -71,20 +71,24 @@ source venv/bin/activate
 ### Pelican Quickstart
 
 Install Pelican and ghp-import. The Pelican command might look a little odd, but it gives you both Pelican and Markdown in one go:
-```
+```bash
 (venv) pip install pelican markdown
 (venv) pip install ghp-import
 ```
 
-At this point, it's a good idea to create a requirements.txt file and commit it before moving forward:
-```
+At this point, it's a good idea to create a requirements.txt file, just in case some time passes and you need to rebuild your virtual env with the exact same versions of the libraries.
+```bash
 (venv) pip freeze > requirements.txt
+```
+
+Let's also commit it before moving forward:
+```bash
 (venv) git add -A
 (venv) git commit -m "Adds virtual env requirements file."
 ```
 
 Follow quickstart:
-```
+```bash
 (venv) pelican-quickstart
 > Where do you want to create your new web site? [.]
 > What will be the title of this web site? Matthew Kapfhammer
@@ -106,21 +110,21 @@ Follow quickstart:
 ```
 
 Generate content based on .md files in ./content:
-```
+```bash
 (venv) pelican content
 ```
 
 Open a new Bash terminal and start the dev server:
-```
+```bash
 cd $YOUR_GOT_REPO_ROOT_DIR
 source venv/bin/activate
 (venv) ./develop_server.sh start
 ```
 
-Check the site in browser at ```http://localhost:8000/```. 
+Check the site in browser at [http://localhost:8000/](http://localhost:8000/). 
 
 Now that's it working, let's stop the server and commit again before updating. Note that GitHub's .gitignore file already ignored the venv dir and all the .pyc files. While we won't be commiting the output dir right now, we won't ignore it either since we'll want to add it when we deploy.
-```
+```bash
 (venv) ./develop_server.sh stop
 git add Makefile develop_server.sh fabfile.py pelicanconf.py publishconf.py
 git commit -m "Adds quickstart files."
@@ -128,14 +132,14 @@ git commit -m "Adds quickstart files."
 
 ## Update with Basic User Content
 
-The develop_server.sh script auto-reloads while making changes, so let's turn that back on in order to get updates as we save our text files.
-```
+The ```develop_server.sh``` script auto-reloads while making changes, so let's turn that back on in order to get updates as we save our text files.
+```bash
 (venv) ./develop_server.sh stop
 ```
 
 ### Add the About Page
 
-This required adding sub-directories to content and modifying pelican.py again to update the menu.
+This required adding sub-directories to content and modifying ```pelicanconf.py``` again to update the menu.
 ```
 ├── content
 │   ├── blog
@@ -143,7 +147,7 @@ This required adding sub-directories to content and modifying pelican.py again t
 │       └── about.md
 ```
 
-Add to pelicanconf.py:
+Add to ```pelicanconf.py```:
 ```python
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
@@ -155,11 +159,11 @@ MENUITEMS = (
 
 ### Add the First Article
 
-I added another .md file under ./content/blog. You can see an example of what to add [in the quickstart](http://docs.getpelican.com/en/stable/quickstart.html#create-an-article).
+I added another .md file under ```./content/blog```. You can see an example of what to add [in the quickstart](http://docs.getpelican.com/en/stable/quickstart.html#create-an-article).
 
 ### Config: Automate Getting Year 
 
-It's not necessary, but is helpful to let code handle populating the date by adding this to pelicanconf.py:
+It's not necessary, but is helpful to let code handle populating the date by adding this to ```pelicanconf.py```:
 ```python
 import time
 COPYRIGHT_YEAR = time.strftime("%Y")
@@ -169,7 +173,7 @@ COPYRIGHT_YEAR = time.strftime("%Y")
 
 We have just enough going now to publish some blog articles, which was the intended goal. I plan on later doing a follow-up post on updating the theme, adding a few more pages, and then customizing the look, etc. But for now, we're good to commit and move on to deploying!
 
-```
+```bash
 git add content pelicanconf.py
 git commit -m "Adds basic user content."
 ```
@@ -178,13 +182,20 @@ git commit -m "Adds basic user content."
 
 Again, very simple. You just [run a few commands and you're done](http://docs.getpelican.com/en/stable/tips.html#user-pages).
 
-```
+```bash
 pelican content -o output -s pelicanconf.py
 ghp-import output
 git push git@github.com:$GITHUB_USERNAME/$GITHUB_USERNAME.github.io.git gh-pages:master
 ```
 
-# More Reading
+# Notes
+
+## Warnings
+
+### Commit with Unix Style Line Endings
+If you decide to commit with git gui launched from the Windows Explorer at any point, you need to commit with unix style line endings. Otherwise when you eventually checkout or pull again, you'll get errors if you try to run any of the bash scripts.
+
+## More Reading
 
 I highly recommend making some time to [read the Pelican manual](https://media.readthedocs.org/pdf/pelican/3.3.0/pelican.pdf). It's well written and easier to skim than the website.
 
@@ -194,4 +205,4 @@ At the this point, I'm feeling pretty proud of myself for doing little to nothin
 
 Github Pages makes hosting dead simple and updating quick.
 
-Looking forward to adding the new theme!
+It feels like the styling choices for the headings in the default theme make it difficult to skim. This is a problem for me. Looking forward to adding a new theme!
