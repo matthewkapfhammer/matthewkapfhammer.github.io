@@ -19,7 +19,8 @@ Then run:
 pelican content -o output -s pelicanconf.py
 ghp-import output
 git checkout master
-git push git@github.com:matthewkapfhammer/matthewkapfhammer.github.io.git gh-pages:master
+git merge gh-pages
+git push origin master
 ```
 
 ## GitHub and Pelican Notes
