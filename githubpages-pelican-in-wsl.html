@@ -63,7 +63,7 @@
 </ol>
 </li>
 <li>Push changes to GitHub to deploy the new website.<ol>
-<li>~ mins</li>
+<li>~2 mins</li>
 </ol>
 </li>
 </ol>
@@ -91,75 +91,80 @@ sudo apt-get install git
 
 
 <p>Create a new virtualenv to work in and enter it:</p>
-<div class="highlight"><pre><span></span><span class="x">cd </span><span class="p">$</span><span class="nv">YOUR_GOT_REPO_ROOT_DIR</span><span class="x"></span>
-<span class="x">virtualenv ./venv</span>
-<span class="x">source venv/bin/activate</span>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$YOUR_GOT_REPO_ROOT_DIR</span>
+virtualenv ./venv
+<span class="nb">source</span> venv/bin/activate
 </pre></div>
 
 
 <h3>Pelican Quickstart</h3>
-<p>Install Pelican. The command might look a little odd, but it gives you both Pelican and Markdown in one go:</p>
-<div class="highlight"><pre><span></span>(venv) pip install pelican markdown
+<p>Install Pelican and ghp-import. The Pelican command might look a little odd, but it gives you both Pelican and Markdown in one go:</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> pip install pelican markdown
+<span class="o">(</span>venv<span class="o">)</span> pip install ghp-import
 </pre></div>
 
 
-<p>At this point, it's a good idea to create a requirements.txt file and commit it before moving forward:</p>
-<div class="highlight"><pre><span></span>(venv) pip freeze &gt; requirements.txt
-(venv) git add -A
-(venv) git commit -m &quot;Adds virtual env requirements file.&quot;
+<p>At this point, it's a good idea to create a requirements.txt file, just in case some time passes and you need to rebuild your virtual env with the exact same versions of the libraries.</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> pip freeze &gt; requirements.txt
+</pre></div>
+
+
+<p>Let's also commit it before moving forward:</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> git add -A
+<span class="o">(</span>venv<span class="o">)</span> git commit -m <span class="s2">&quot;Adds virtual env requirements file.&quot;</span>
 </pre></div>
 
 
 <p>Follow quickstart:</p>
-<div class="highlight"><pre><span></span>(venv) pelican-quickstart
-&gt; Where do you want to create your new web site? [.]
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> pelican-quickstart
+&gt; Where <span class="k">do</span> you want to create your new web site? <span class="o">[</span>.<span class="o">]</span>
 &gt; What will be the title of this web site? Matthew Kapfhammer
 &gt; Who will be the author of this web site? Matthew Kapfhammer
-&gt; What will be the default language of this web site? [en]
-&gt; Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) n
-&gt; Do you want to enable article pagination? (Y/n) y
-&gt; How many articles per page do you want? [10]
-&gt; What is your time zone? [Europe/Paris] US/Pacific
-&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) y
-&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y/n) y
-&gt; Do you want to upload your website using FTP? (y/N) n
-&gt; Do you want to upload your website using SSH? (y/N) n
-&gt; Do you want to upload your website using Dropbox? (y/N) n
-&gt; Do you want to upload your website using S3? (y/N) n
-&gt; Do you want to upload your website using Rackspace Cloud Files? (y/N) n
-&gt; Do you want to upload your website using GitHub Pages? (y/N) y
-&gt; Is this your personal page (username.github.io)? (y/N) y
+&gt; What will be the default language of this web site? <span class="o">[</span>en<span class="o">]</span>
+&gt; Do you want to specify a URL prefix? e.g., http://example.com   <span class="o">(</span>Y/n<span class="o">)</span> n
+&gt; Do you want to <span class="nb">enable</span> article pagination? <span class="o">(</span>Y/n<span class="o">)</span> y
+&gt; How many articles per page <span class="k">do</span> you want? <span class="o">[</span>10<span class="o">]</span>
+&gt; What is your <span class="nb">time</span> zone? <span class="o">[</span>Europe/Paris<span class="o">]</span> US/Pacific
+&gt; Do you want to generate a Fabfile/Makefile to automate generation and publishing? <span class="o">(</span>Y/n<span class="o">)</span> y
+&gt; Do you want an auto-reload <span class="p">&amp;</span> simpleHTTP script to assist with theme and site development? <span class="o">(</span>Y/n<span class="o">)</span> y
+&gt; Do you want to upload your website using FTP? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using SSH? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using Dropbox? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using S3? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using Rackspace Cloud Files? <span class="o">(</span>y/N<span class="o">)</span> n
+&gt; Do you want to upload your website using GitHub Pages? <span class="o">(</span>y/N<span class="o">)</span> y
+&gt; Is this your personal page <span class="o">(</span>username.github.io<span class="o">)</span>? <span class="o">(</span>y/N<span class="o">)</span> y
 </pre></div>
 
 
 <p>Generate content based on .md files in ./content:</p>
-<div class="highlight"><pre><span></span>(venv) pelican content
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> pelican content
 </pre></div>
 
 
 <p>Open a new Bash terminal and start the dev server:</p>
-<div class="highlight"><pre><span></span><span class="x">cd </span><span class="p">$</span><span class="nv">YOUR_GOT_REPO_ROOT_DIR</span><span class="x"></span>
-<span class="x">source venv/bin/activate</span>
-<span class="x">(venv) ./develop_server.sh start</span>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$YOUR_GOT_REPO_ROOT_DIR</span>
+<span class="nb">source</span> venv/bin/activate
+<span class="o">(</span>venv<span class="o">)</span> ./develop_server.sh start
 </pre></div>
 
 
-<p>Check the site in browser at <code>http://localhost:8000/</code>. </p>
+<p>Check the site in browser at <a href="http://localhost:8000/">http://localhost:8000/</a>. </p>
 <p>Now that's it working, let's stop the server and commit again before updating. Note that GitHub's .gitignore file already ignored the venv dir and all the .pyc files. While we won't be commiting the output dir right now, we won't ignore it either since we'll want to add it when we deploy.</p>
-<div class="highlight"><pre><span></span>(venv) ./develop_server.sh stop
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> ./develop_server.sh stop
 git add Makefile develop_server.sh fabfile.py pelicanconf.py publishconf.py
-git commit -m &quot;Adds quickstart files.&quot;
+git commit -m <span class="s2">&quot;Adds quickstart files.&quot;</span>
 </pre></div>
 
 
 <h2>Update with Basic User Content</h2>
-<p>The develop_server.sh script auto-reloads while making changes, so let's turn that back on in order to get updates as we save our text files.</p>
-<div class="highlight"><pre><span></span>(venv) ./develop_server.sh start
+<p>The <code>develop_server.sh</code> script auto-reloads while making changes, so let's turn that back on in order to get updates as we save our text files.</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> ./develop_server.sh stop
 </pre></div>
 
 
 <h3>Add the About Page</h3>
-<p>This required adding sub-directories to content and modifying pelican.py again to update the menu.</p>
+<p>This required adding sub-directories to content and modifying <code>pelicanconf.py</code> again to update the menu.</p>
 <div class="highlight"><pre><span></span>├── content
 │   ├── blog
 │   └── pages
@@ -167,7 +172,7 @@ git commit -m &quot;Adds quickstart files.&quot;
 </pre></div>
 
 
-<p>Add to pelicanconf.py:</p>
+<p>Add to <code>pelicanconf.py</code>:</p>
 <div class="highlight"><pre><span></span><span class="n">DISPLAY_CATEGORIES_ON_MENU</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">DISPLAY_PAGES_ON_MENU</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">MENUITEMS</span> <span class="o">=</span> <span class="p">(</span>
@@ -178,9 +183,9 @@ git commit -m &quot;Adds quickstart files.&quot;
 
 
 <h3>Add the First Article</h3>
-<p>I added another .md file under ./content/blog. You can see an example of what to add <a href="http://docs.getpelican.com/en/stable/quickstart.html#create-an-article">in the quickstart</a>.</p>
+<p>I added another .md file under <code>./content/blog</code>. You can see an example of what to add <a href="http://docs.getpelican.com/en/stable/quickstart.html#create-an-article">in the quickstart</a>.</p>
 <h3>Config: Automate Getting Year</h3>
-<p>It's not necessary, but is helpful to let code handle populating the date by adding this to pelicanconf.py:</p>
+<p>It's not necessary, but is helpful to let code handle populating the date by adding this to <code>pelicanconf.py</code>:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="n">COPYRIGHT_YEAR</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y&quot;</span><span class="p">)</span>
 </pre></div>
@@ -189,24 +194,28 @@ git commit -m &quot;Adds quickstart files.&quot;
 <h3>Review</h3>
 <p>We have just enough going now to publish some blog articles, which was the intended goal. I plan on later doing a follow-up post on updating the theme, adding a few more pages, and then customizing the look, etc. But for now, we're good to commit and move on to deploying!</p>
 <div class="highlight"><pre><span></span>git add content pelicanconf.py
-git commit -m &quot;Adds basic user content.&quot;
+git commit -m <span class="s2">&quot;Adds basic user content.&quot;</span>
 </pre></div>
 
 
 <h2>Deploy New Site</h2>
 <p>Again, very simple. You just <a href="http://docs.getpelican.com/en/stable/tips.html#user-pages">run a few commands and you're done</a>.</p>
-<div class="highlight"><pre><span></span><span class="n">pelican</span> <span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="n">output</span> <span class="o">-</span><span class="n">s</span> <span class="n">pelicanconf</span><span class="o">.</span><span class="n">py</span>
-<span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="nn">output</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">git</span><span class="nd">@github.com</span><span class="p">:</span><span class="err">$</span><span class="n">GITHUB_USERNAME</span><span class="o">/</span><span class="err">$</span><span class="n">GITHUB_USERNAME</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span><span class="p">:</span><span class="n">master</span>
+<div class="highlight"><pre><span></span>pelican content -o output -s pelicanconf.py
+ghp-import output
+git push git@github.com:<span class="nv">$GITHUB_USERNAME</span>/<span class="nv">$GITHUB_USERNAME</span>.github.io.git gh-pages:master
 </pre></div>
 
 
-<h1>More Reading</h1>
+<h1>Notes</h1>
+<h2>Warnings</h2>
+<h3>Commit with Unix Style Line Endings</h3>
+<p>If you decide to commit with git gui launched from the Windows Explorer at any point, you need to commit with unix style line endings. Otherwise when you eventually checkout or pull again, you'll get errors if you try to run any of the bash scripts.</p>
+<h2>More Reading</h2>
 <p>I highly recommend making some time to <a href="https://media.readthedocs.org/pdf/pelican/3.3.0/pelican.pdf">read the Pelican manual</a>. It's well written and easier to skim than the website.</p>
 <h1>Conclusions</h1>
 <p>At the this point, I'm feeling pretty proud of myself for doing little to nothing. Most of my time was spent researching and comparing my options. </p>
 <p>Github Pages makes hosting dead simple and updating quick.</p>
-<p>Looking forward to adding the new theme!</p>
+<p>It feels like the styling choices for the headings in the default theme make it difficult to skim. This is a problem for me. Looking forward to adding a new theme!</p>
     </div><!-- /.entry-content -->
 
   </article>
