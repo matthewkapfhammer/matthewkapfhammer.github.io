@@ -18,6 +18,7 @@ Then run:
 ```bash
 pelican content -o output -s pelicanconf.py
 ghp-import output
+git checkout master
 git push git@github.com:matthewkapfhammer/matthewkapfhammer.github.io.git gh-pages:master
 ```
 
@@ -52,6 +53,9 @@ Fix by ignoring gh-pages history and merging with master:
 git pull origin master --allow-unrelated-histories
 git push git@github.com:matthewkapfhammer/matthewkapfhammer.github.io.git gh-pages:master
 ```
+
+http://stackoverflow.com/questions/4708645/vim-for-windows-what-do-i-type-to-save-and-exit-from-a-file
+Hit ```esc``` and type ```:wq```.
 
 ### Troubleshooting Python Installs
 Get site packages location.
