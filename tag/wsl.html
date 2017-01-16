@@ -196,8 +196,8 @@ git commit -m <span class="s2">&quot;Adds basic user content.&quot;</span>
 <h2>Deploy New Site</h2>
 <p>Again, very simple. You just <a href="http://docs.getpelican.com/en/stable/tips.html#user-pages">run a few commands and you're done</a>.</p>
 <div class="highlight"><pre><span></span>pelican content -o output -s pelicanconf.py
-ghp-import output
-git push git@github.com:<span class="nv">$GITHUB_USERNAME</span>/<span class="nv">$GITHUB_USERNAME</span>.github.io.git gh-pages:master
+ghp-import output -b master
+git push origin master
 </pre></div>
 
 
