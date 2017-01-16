@@ -184,8 +184,8 @@ Again, very simple. You just [run a few commands and you're done](http://docs.ge
 
 ```bash
 pelican content -o output -s pelicanconf.py
-ghp-import output
-git push git@github.com:$GITHUB_USERNAME/$GITHUB_USERNAME.github.io.git gh-pages:master
+ghp-import output -b master
+git push origin master
 ```
 
 # Notes
