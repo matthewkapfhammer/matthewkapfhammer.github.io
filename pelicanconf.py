@@ -16,7 +16,7 @@ PATH = 'content'
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = (
-    ('About', '/about'),
+    ('About', '/pages/about'),
     ('Blog', '/'),
 )
 DEFAULT_PAGINATION = 10

@@ -1,4 +1,4 @@
-Title: About
+Title: About..
 Date: 2017-01-14
 Slug: about
 Authors: Matthew Kapfhammer
